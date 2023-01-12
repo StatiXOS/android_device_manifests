@@ -38,6 +38,9 @@ OPTIONS:
     -m, --module
         Module to be build
 
+    -p, --package-type
+        Specifies package type to build (Default: otapackage)
+
     -u, --update-api
         Update APIs
 
@@ -97,7 +100,7 @@ JOBS=8
 
 # Setup getopt.
 long_opts="clean_build,debug,help,image:,jobs:,log_file:,module:,"
-long_opts+="update-api,build_variant:"
+long_opts+="package-type:,update-api,build_variant:"
 getopt_cmd=$(getopt -o cdhi:j:k:l:m:p:s:uv: --long "$long_opts" \
             -n $(basename $0) -- "$@") || \
             { echo -e "\nERROR: Getopt failed. Extra args\n"; usage; exit 1;}
@@ -113,6 +116,7 @@ while true; do
         -j|--jobs) JOBS="$2"; shift;;
         -l|--log_file) LOG_FILE="$2"; shift;;
         -m|--module) MODULE="$2"; shift;;
+        -p|--package-type) PKG="$2"; shift;;
         -u|--update-api) UPDATE_API="true";;
         -v|--build_variant) VARIANT="$2"; shift;;
         --) shift; break;;
@@ -131,6 +135,18 @@ if [ $# -gt 1 ]; then
     usage
     exit 1
 fi
+
+case "$PKG" in
+    "")
+        PKG="bacon" ;;
+    "otapackage")
+        PKG="bacon" ;;
+    "updatepackage")
+        PKG="updatepackage" ;;
+    *)
+        echo "Unknown package type! Bailing out!" && exit 1 ;;
+esac
+
 TARGET="$1"; shift
 
 if [ -z $LOG_FILE ]; then
@@ -179,4 +195,4 @@ if [ -n "$IMAGE" ]; then
     build_$IMAGE "$CMD"
 fi
 
-build_android "$CMD"
+build_android "$PKG" "$CMD"
