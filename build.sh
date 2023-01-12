@@ -38,9 +38,6 @@ OPTIONS:
     -m, --module
         Module to be build
 
-    -p, --project
-        Project to be build
-
     -u, --update-api
         Update APIs
 
@@ -80,11 +77,6 @@ build_module() {
     m $MODULE $@ | tee $LOG_FILE.log
 }
 
-build_project() {
-    echo -e "\nINFO: Build $PROJECT for $TARGET\n"
-    mmm $PROJECT | tee $LOG_FILE.log
-}
-
 exit_on_error() {
     exit_code=$1
     last_command=${@:2}
@@ -112,7 +104,7 @@ JOBS=8
 
 # Setup getopt.
 long_opts="clean_build,debug,help,image:,jobs:,log_file:,module:,"
-long_opts+="project:,update-api,build_variant:"
+long_opts+="update-api,build_variant:"
 getopt_cmd=$(getopt -o cdhi:j:k:l:m:p:s:uv: --long "$long_opts" \
             -n $(basename $0) -- "$@") || \
             { echo -e "\nERROR: Getopt failed. Extra args\n"; usage; exit 1;}
@@ -128,7 +120,6 @@ while true; do
         -j|--jobs) JOBS="$2"; shift;;
         -l|--log_file) LOG_FILE="$2"; shift;;
         -m|--module) MODULE="$2"; shift;;
-        -p|--project) PROJECT="$2"; shift;;
         -u|--update-api) UPDATE_API="true";;
         -v|--build_variant) VARIANT="$2"; shift;;
         --) shift; break;;
@@ -200,10 +191,6 @@ fi
 
 if [ -n "$MODULE" ]; then
     build_module "$CMD"
-fi
-
-if [ -n "$PROJECT" ]; then
-    build_project
 fi
 
 if [ -n "$IMAGE" ]; then
