@@ -143,7 +143,7 @@ if [ "$DEBUG" = "true" ]; then
 fi
 
 source build/envsetup.sh
-lunch $TARGET-$VARIANT
+lunch statix_$TARGET-$VARIANT
 
 if [ "$CLEAN_BUILD" = "true" ]; then
     clean_build
