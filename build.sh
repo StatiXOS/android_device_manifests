@@ -52,32 +52,32 @@ USAGE
 
 clean_build() {
     echo -e "\nINFO: Removing entire out dir. . .\n"
-    make clobber
+    m clobber
 }
 
 build_android() {
     echo -e "\nINFO: Build Android tree for $TARGET\n"
-    make $@ | tee $LOG_FILE.log
+    m $@ | tee $LOG_FILE.log
 }
 
 build_bootimg() {
     echo -e "\nINFO: Build bootimage for $TARGET\n"
-    make bootimage $@ | tee $LOG_FILE.log
+    m bootimage $@ | tee $LOG_FILE.log
 }
 
 build_sysimg() {
     echo -e "\nINFO: Build systemimage for $TARGET\n"
-    make systemimage $@ | tee $LOG_FILE.log
+    m systemimage $@ | tee $LOG_FILE.log
 }
 
 build_usrimg() {
     echo -e "\nINFO: Build userdataimage for $TARGET\n"
-    make userdataimage $@ | tee $LOG_FILE.log
+    m userdataimage $@ | tee $LOG_FILE.log
 }
 
 build_module() {
     echo -e "\nINFO: Build $MODULE for $TARGET\n"
-    make $MODULE $@ | tee $LOG_FILE.log
+    m $MODULE $@ | tee $LOG_FILE.log
 }
 
 build_project() {
@@ -87,7 +87,7 @@ build_project() {
 
 update_api() {
     echo -e "\nINFO: Updating APIs\n"
-    make update-api | tee $LOG_FILE.log
+    m update-api | tee $LOG_FILE.log
 }
 
 # Set defaults
