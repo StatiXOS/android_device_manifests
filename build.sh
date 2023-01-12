@@ -85,6 +85,15 @@ build_project() {
     mmm $PROJECT | tee $LOG_FILE.log
 }
 
+exit_on_error() {
+    exit_code=$1
+    last_command=${@:2}
+    if [ $exit_code -ne 0 ]; then
+        >&2 echo "\"${last_command}\" command failed with exit code ${exit_code}."
+        exit $exit_code
+    fi
+}
+
 update_api() {
     echo -e "\nINFO: Updating APIs\n"
     m update-api | tee $LOG_FILE.log
@@ -143,7 +152,25 @@ if [ "$DEBUG" = "true" ]; then
 fi
 
 source build/envsetup.sh
-lunch statix_$TARGET-$VARIANT
+
+if [ -d "device/*/$TARGET" ]; then
+    echo "Device tree found"
+else
+    echo "Checking if tree exists in manifests"
+    if test -f "device/manifests/$TARGET.xml"; then
+        echo "Syncing $TARGET trees"
+        # Clear older manifests
+        if ![ -d .repo/local_manifests]; then
+            mkdir -p .repo/local_manifests/
+        else
+            rm -rf .repo/local_manifests/*.xml
+        fi
+        cp device/manifests/$TARGET.xml .repo/local_manifests/$TARGET.xml
+        repo sync --no-tags --no-clone-bundle -j${JOBS} || exit_on_error
+    fi
+fi
+
+lunch statix_$TARGET-$VARIANT || exit_on_error
 
 if [ "$CLEAN_BUILD" = "true" ]; then
     clean_build
