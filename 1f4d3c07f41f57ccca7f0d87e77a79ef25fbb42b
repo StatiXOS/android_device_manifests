@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d2eeacc_b953a82c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-01-16T06:08:45Z",
+      "side": 1,
+      "message": "symlink might be better so we can pull in common manifests",
+      "revId": "1f4d3c07f41f57ccca7f0d87e77a79ef25fbb42b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
