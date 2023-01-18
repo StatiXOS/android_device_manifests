@@ -16,6 +16,24 @@
       "message": "symlink might be better so we can pull in common manifests",
       "revId": "1f4d3c07f41f57ccca7f0d87e77a79ef25fbb42b",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c84bff0_836ce678",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2023-01-18T08:22:23Z",
+      "side": 1,
+      "message": "Ah yes good idea",
+      "parentUuid": "4d2eeacc_b953a82c",
+      "revId": "1f4d3c07f41f57ccca7f0d87e77a79ef25fbb42b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
