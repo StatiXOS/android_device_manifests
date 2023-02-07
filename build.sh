@@ -170,7 +170,7 @@ else
             mkdir -p .repo/local_manifests/
         fi
         ln -s device/manifests/$TARGET.xml .repo/local_manifests/$TARGET.xml
-        repo sync --no-tags --no-clone-bundle || exit_on_error
+        repo sync --no-tags --no-clone-bundle
     fi
 fi
 
