@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+    fetch="https://github.com/" />
+  <remote  name="gitlab"
+    fetch="https://gitlab.com/" />
+
+  <!-- RMP6768 Device -->
+  <project path="device/realme/RMP6768" name="StatiXOS/android_device_realme_RMP6768" remote="github" revision="tm" />
+
+  <!-- RMP6768 Vendor -->
+  <project path="vendor/realme/RMP6768" name="StatiXOS/android_vendor_realme_RMP6768" remote="gitlab" revision="tm" clone-depth="1" />
+
+  <!-- RMP6768 Kernel -->
+  <project path="device/realme/RMP6768-kernel" name="StatiXOS/android_device_realme_RMP6768-kernel" remote="github" revision="tm" clone-depth="1" />
+
+  <!-- Sepolicy -->
+  <project path="device/mediatek/sepolicy_vndr" name="StatiXOS/android_device_mediatek_sepolicy_vndr" remote="github" revision="tm" />
+
+  <!-- Hardware -->
+  <project path="hardware/mediatek" name="StatiXOS/android_hardware_mediatek" remote="github" revision="tm" />
+
+</manifest>
