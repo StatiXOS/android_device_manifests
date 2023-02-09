@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- Device Trees -->
+    <project path="device/xiaomi/venus" name="android_device_xiaomi_venus" remote="statix" />
+    <project path="device/xiaomi/sm8350-common" name="android_device_xiaomi_sm8350-common" remote="statix" />
+
+    <!-- Hardware -->
+    <project path="vendor/hardware/xiaomi" name="android_vendor_hardware_xiaomi" remote="statix" />
+
+    <!-- Prebuilt Kernel -->
+    <project path="device/xiaomi/venus-kernel" name="android_device_xiaomi_venus-kernel" remote="statix" />
+
+    <!-- Vendor -->
+    <project path="vendor/xiaomi/venus" name="android_vendor_xiaomi_venus" remote="statix-gitlab" />
+    <project path="vendor/xiaomi/sm8350-common" name="android_vendor_xiaomi_sm8350-common" remote="statix-gitlab" />
+    <project path="vendor/xiaomi/venus-firmware" name="firmware/venus" remote="statix-gitlab" />
+
+</manifest>
