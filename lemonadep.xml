@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <project name="android_device_oneplus_lemonadep" path="device/oneplus/lemonadep" remote="statix" revision="tm" />
+    <project name="android_device_oneplus_sm8350-kernel" path="device/oneplus/sm8350-kernel" remote="statix" revision="tm" />
+    <project name="android_device_oneplus_sm8350-common" path="device/oneplus/sm8350-common" remote="statix" revision="tm" />
+    <project name="android_hardware_olus" path="vendor/hardware/oplus" remote="statix" revision="tm" />
+    <project name="android_vendor_oneplus_lemonadep" path="vendor/oneplus/lemonadep" remote="gitlab" revision="tm" />
+    <project name="android_vendor_oneplus_sm8350-common" path="vendor/oneplus/sm8350-common" remote="gitlab" revision="tm" />
+</manifest>
