@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- StatiXOS 6.x manifest for curtana -->
+
+    <!-- Remotes -->
+    <remote name="leddaz-gitlab" fetch="https://gitlab.com/LeddaZ" revision="tm-qpr1" />
+
+    <!-- Device -->
+    <project path="device/xiaomi/curtana" name="android_device_xiaomi_curtana" remote="statix" revision="tm" />
+    <project path="device/xiaomi/curtana-firmware" name="android_device_xiaomi_curtana-firmware" remote="leddaz-gitlab" />
+    <project path="device/xiaomi/curtana-kernel" name="android_device_xiaomi_curtana-kernel" remote="statix" revision="tm" />
+
+    <!-- Vendor -->
+    <project path="vendor/hardware/xiaomi" name="android_vendor_hardware_xiaomi" remote="statix" revision="tm" />
+    <project path="vendor/xiaomi/curtana" name="android_vendor_xiaomi_curtana" remote="gitlab" revision="tm" />
+    <project path="vendor/gcam" name="android_vendor_gcam" remote="gitlab" revision="tm-qpr1" />    
+    
+</manifest>
