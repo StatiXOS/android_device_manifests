@@ -173,7 +173,7 @@ else
             rm -rf .repo/local_manifests/*.xml
         fi
         cp device/manifests/$TARGET.xml .repo/local_manifests/$TARGET.xml
-        repo sync --no-tags --no-clone-bundle -j${JOBS} || exit_on_error
+        repo sync --no-tags --no-clone-bundle -j${JOBS}
     fi
 fi
 
