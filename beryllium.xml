@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- StatiXOS 6.x manifest for beryllium -->
+
+    <!-- Device trees -->
+    <project path="device/xiaomi/beryllium" name="android_device_xiaomi_beryllium" remote="statix" revision="tm" />
+
+    <!-- Prebuilt kernel -->
+    <project path="device/xiaomi/beryllium-kernel" name="android_device_xiaomi_beryllium-kernel" remote="statix" revision="tm" />
+
+    <!-- Proprietary files -->
+    <project path="vendor/xiaomi/beryllium" name="android_vendor_xiaomi_beryllium" remote="stx-gitlab" revision="tm" />
+
+</manifest>
