@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99751c79_bf0ff7ed",
+        "filename": "build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-03-19T13:13:16Z",
+      "side": 1,
+      "message": "jfyi we need $RELEASE here now too",
+      "range": {
+        "startLine": 191,
+        "startChar": 14,
+        "endLine": 191,
+        "endChar": 29
+      },
+      "revId": "6f165bbbbd3ab4d5108b069cd40d793ce91ba908",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
