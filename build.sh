@@ -175,7 +175,7 @@ else
         echo "Syncing $TARGET trees"
         target_dirs=$(get_target_dirs "device/manifests/$TARGET.xml")
         # Clear older manifests
-        if ![ -d .repo/local_manifests]; then
+        if ! [ -d .repo/local_manifests ]; then
             mkdir -p .repo/local_manifests/
         else
             rm -rf .repo/local_manifests/*.xml
