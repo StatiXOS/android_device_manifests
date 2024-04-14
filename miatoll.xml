@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- StatiXOS 7.x manifest for miatoll -->
+
+    <!-- Device -->
+    <project path="device/xiaomi/miatoll" name="android_device_xiaomi_curtana" remote="statix" revision="udc" />
+    <project path="device/xiaomi/miatoll-kernel" name="android_device_xiaomi_curtana-kernel" remote="statix" revision="udc" />
+
+    <!-- Vendor -->
+    <project path="vendor/hardware/xiaomi" name="android_vendor_hardware_xiaomi" remote="statix" revision="udc" />
+    <project path="vendor/xiaomi/miatoll" name="statixos/android_vendor_xiaomi_miatoll" remote="gitlab" revision="udc" />
+    
+</manifest>
