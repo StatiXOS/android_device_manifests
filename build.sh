@@ -186,7 +186,7 @@ else
         if [[ ! -z "$target_dirs" ]]; then
             IFS=$'\n' read -r -a target_dir_array <<< "$target_dirs"
             for dir in "${target_dir_array[@]}"; do
-                repo sync -q --no-tags --no-deps --no-remote-sync "$dir"
+                repo sync -q --no-tags "$dir"
             done
         else
             echo "Error: Target directories not found in $manifest_file"
