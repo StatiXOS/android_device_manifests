@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Sky repositories-->
+    <project path="device/xiaomi/sky" name="android_device_xiaomi_sky" remote="statix" revision="udc" />
+    <project path="device/xiaomi/sky-kernel" name="android_device_xiaomi_sky-kernel" remote="statix" revision="udc" />
+    <project path="vendor/xiaomi/sky" name="statixos/android_vendor_xiaomi_sky" remote="gitlab" revision="udc" />
+    <project path="vendor/hardware/xiaomi" name="android_vendor_hardware_xiaomi" remote="statix" revision="udc" />
+</manifest>
