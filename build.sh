@@ -50,6 +50,9 @@ OPTIONS:
 USAGE
 }
 
+# Set release
+RELEASE=ap1a
+
 clean_build() {
     echo -e "\nINFO: Removing entire out dir. . .\n"
     m clobber
@@ -195,7 +198,7 @@ else
     fi
 fi
 
-lunch statix_$TARGET-$VARIANT || exit_on_error
+lunch statix_$TARGET-$RELEASE-$VARIANT || exit_on_error
 
 if [ "$CLEAN_BUILD" = "true" ]; then
     clean_build
