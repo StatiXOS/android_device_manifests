@@ -85,6 +85,9 @@ build_module() {
 
 exit_on_error() {
     exit_code=$1
+    if [ -d $exit_code ]; then
+        exit_code=1
+    fi
     last_command=${@:2}
     if [ $exit_code -ne 0 ]; then
         >&2 echo "\"${last_command}\" command failed with exit code ${exit_code}."
