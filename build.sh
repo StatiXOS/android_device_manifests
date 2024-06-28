@@ -51,7 +51,7 @@ USAGE
 }
 
 # Set release
-RELEASE=ap1a
+RELEASE=ap2a
 
 clean_build() {
     echo -e "\nINFO: Removing entire out dir. . .\n"
