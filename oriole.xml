@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Oriole repositories-->
+    <project path="vendor/google_devices/oriole" name="anaywadhera/android_vendor_google_devices_oriole" remote="gitea" revision="udc-qpr2" />
+
+    <include name="gs101.xml" />
+</manifest>

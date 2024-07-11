@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project path="device/google/gs101" name="android_device_google_gs101" remote="statix" />
+  <project path="device/google/gs-common" name="device/google/gs-common" remote="aosp" />
+  <project path="device/google/raviole" name="android_device_google_raviole" remote="statix" />
+  <project path="device/google/raviole-kernel" name="device/google/raviole-kernel" remote="aosp" clone-depth="1" />
+</manifest>
