@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- nabu repositories-->
+    <project path="device/xiaomi/nabu" name="android_device_xiaomi_nabu" remote="statix" revision="udc" />
+    <project path="device/xiaomi/nabu-kernel" name="android_device_xiaomi_nabu-kernel" remote="statix" revision="udc" />
+    <project path="device/xiaomi/sm8150-common" name="android_device_xiaomi_sm8150-common" remote="statix" revision="udc" />
+    <project path="vendor/xiaomi/nabu" name="statixos/android_vendor_xiaomi_nabu" remote="gitlab" revision="udc" />
+    <project path="device/vendor/sm8150-common" name="android_vendor_xiaomi_sm8150-common" remote="gitlab" revision="udc" />
+    <project path="vendor/hardware/xiaomi" name="android_vendor_hardware_xiaomi" remote="statix" revision="udc" />
+</manifest>
