@@ -95,13 +95,6 @@ exit_on_error() {
     fi
 }
 
-# Device sync related
-get_target_dirs() {
-  local manifest_file="$1"
-  target_dirs=$(grep -E 'path="[^"]+"' "$manifest_file" | awk -F'"' '{print $2}')
-  echo "${target_dirs:-""}"  # Handle potential empty or missing value
-}
-
 update_api() {
     echo -e "\nINFO: Updating APIs\n"
     m update-api | tee $LOG_FILE.log
@@ -179,7 +172,6 @@ else
     echo "Checking if tree exists in manifests"
     if test -f "device/manifests/$TARGET.xml"; then
         echo "Syncing $TARGET trees"
-        target_dirs=$(get_target_dirs "device/manifests/$TARGET.xml")
         # Clear older manifests
         if ! [ -d .repo/local_manifests ]; then
             mkdir -p .repo/local_manifests/
@@ -187,17 +179,8 @@ else
             rm -rf .repo/local_manifests/*.xml
         fi
         cp device/manifests/$TARGET.xml .repo/local_manifests/$TARGET.xml
-
-        # Loop through each extracted target directory and sync
-        if [[ ! -z "$target_dirs" ]]; then
-            IFS=$'\n' read -r -a target_dir_array <<< "$target_dirs"
-            for dir in "${target_dir_array[@]}"; do
-                repo sync -q --no-tags "$dir"
-            done
-        else
-            echo "Error: Target directories not found in $manifest_file"
-            exit_on_error
-        fi
+        grep -E 'path="[^"]+"' device/manifests/$TARGET.xml | awk -F'"' '{print $2}' | xargs -I {} echo -n "{} " > .device-sync
+        repo sync $(cat .device-sync)
     fi
 fi
 
