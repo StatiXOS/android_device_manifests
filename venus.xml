@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- Remotes -->
+    <remote name="stx-gitlab" revision="udc" fetch="https://gitlab.com/StatiXOS" />
+
+    <!-- Device trees -->
+    <project path="device/xiaomi/venus" name="platform_device_xiaomi_venus" remote="statix" revision="udc" />
+    <project path="device/xiaomi/miuicamera-venus" name="platform_device_xiaomi_miuicamera-venus" remote="statix" revision="udc" />
+    <project path="device/xiaomi/sm8350-common" name="platform_device_xiaomi_sm8350-common" remote="statix" revision="udc" />
+
+    <!-- Hardware -->
+    <project path="vendor/hardware/xiaomi" name="android_vendor_hardware_xiaomi" remote="statix" revision="udc" />
+
+    <!-- Kernel -->
+    <project path="device/xiaomi/venus-kernel" name="platform_device_xiaomi_venus-kernel" remote="statix" revision="udc" />
+
+    <!-- Proprietary files -->
+    <project path="vendor/xiaomi/venus" name="proprietary_vendor_xiaomi_venus" remote="stx-gitlab" />
+    <project path="vendor/xiaomi/miuicamera-venus" name="ralph20060412/proprietary_vendor_xiaomi_miuicamera-venus" remote="gitea" revision="udc" />
+    <project path="vendor/xiaomi/sm8350-common" name="proprietary_vendor_xiaomi_sm8350-common" remote="stx-gitlab" />
+    <project path="vendor/xiaomi/venus-firmware" name="ralph20060412/android_vendor_xiaomi_venus-firmware" remote="gitea" revision="udc" /> 
+    
+</manifest>
