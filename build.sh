@@ -7,6 +7,9 @@
 
 set -o errexit
 
+# Set the script's path
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
 usage() {
 cat <<USAGE
 
@@ -163,6 +166,10 @@ CMD="-j $JOBS"
 if [ "$DEBUG" = "true" ]; then
     CMD+=" showcommands"
 fi
+
+# Move to the top directory
+# stx/device/manifests/build.sh -> stx/
+cd "${SCRIPT_DIR}/../../"
 
 source build/envsetup.sh
 
